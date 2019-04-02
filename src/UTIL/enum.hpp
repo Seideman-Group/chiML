@@ -1,0 +1,24 @@
+/** @file UTIL/enum.hpp
+ *  @brief definitions for all enumerated classes used throughout the code
+ *
+ *  @author Thomas A. Purcell (tpurcell90)
+ *  @bug No known bugs
+ */
+
+#ifndef FDTD_ENUMS
+#define FDTD_ENUMS
+    enum class POLARIZATION {EX,EY,EZ,HX,HY,HZ,L,R};
+    enum class PLSSHAPE {GAUSSIAN, CONTINUOUS,RICKER, RAMP_CONT,BH,RECT};
+    enum class SHAPE {SPHERE,HEMISPHERE,BLOCK,ELLIPSOID, HEMIELLIPSOID,CONE,CYLINDER,ROUNDED_BLOCK, TRIANGLE_PRISM, TRAPEZOIDAL_PRISM, TERS_TIP, PARABOLOID, TORUS, TETRAHEDRON};
+    enum class DIRECTION {X,Y,Z, NONE};
+    enum class PLOTTYPE  {REAL,IMAG, MAG, POW, LNPOW};
+    enum class GRIDOUTFXN{REAL,IMAG, POW, MAG, LNPOW};
+    enum class GRIDOUTTYPE{BOX, LIST, NONE};
+    enum class DTCTYPE{EX, EY, EZ, HX, HY, HZ, DX, DY, DZ, BX, BY, BZ, EPOW, HPOW, PX, PY, PZ, MX, MY, MZ, CHIPX, CHIPY, CHIPZ, CHIMX, CHIMY, CHIMZ};
+    enum class DTCCLASS{COUT, TXT, BIN, BMP, FREQ};
+    enum class DTCCLASSTYPE{FIELD, POW, POL};
+    enum class PROC_DIR {UP, DOWN, LEFT, RIGHT, NONE };
+    enum class DISTRIBUTION {GAUSSIAN, DELTAFXN, SKEW_NORMAL, LOG_NORMAL, GEN_SKEW_NORMAL, EXP_POW_DIST};
+    enum class MAT_DIP_ORIENTAITON{REL_TO_NORM, ISOTROPIC, UNIDIRECTIONAL, LONG_TAN, LAT_TAN};
+    enum class LOR_POL_TYPE{ MAG, ELE, CHIE, CHIM};
+#endif
