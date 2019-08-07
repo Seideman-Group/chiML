@@ -1117,6 +1117,10 @@ std::tuple<double,double,double, std::vector<LorenzDipoleOscillator> >  parallel
     {
         return std::make_tuple( 2.1025, 1.0, 0.0, std::vector<LorenzDipoleOscillator>() );
     }
+    else if(mat.compare("Si") == 0)
+    {
+        return std::make_tuple( 11.8336, 1.0, 0.0, std::vector<LorenzDipoleOscillator>() );
+    }
     else if(mat.compare("CdSe") == 0)
     {
         return std::make_tuple( 6.20, 1.0, 0.0, std::vector<LorenzDipoleOscillator>() );
