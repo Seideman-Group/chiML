@@ -469,7 +469,7 @@ def write_tfsf(sz, loc, pulseList, theta=90.0, phi=0.0, psi=0.0, m=[], circPol="
         # psi     : angle describing light's polarization
         # sz      : [size_x, size_y]
         # loc     : location of center point
-        pulseList: list of all pulse
+        # pulseList: list of all pulse
     return {"loc":loc, "size":sz, "theta" : round(theta, 8), "phi":round(phi,  8), "psi" : round(psi,8), "m" :m, "PulseList" : pulseList, "circPol" : circPol,  "ellpiticalKRat" : ellpiticalKRat, "pmlThick" : pmlThick, "pmlAMax" : pmlAMax, "pmlM" : pmlM, "pmlMa" : pmlMa}
 
 def write_tfsf_m_def(sz, loc, pulseList, m=[1,0,0], psi=0.0, circPol="Ex", ellpiticalKRat=1.0, pmlThick=20, pmlAMax=0.00, pmlM=3.0, pmlMa=1.0):
@@ -478,7 +478,7 @@ def write_tfsf_m_def(sz, loc, pulseList, m=[1,0,0], psi=0.0, circPol="Ex", ellpi
 def write_normal_src(loc, sz, pulseList, pol):
         # sz       : [size_x, size_y]
         # loc      : location of center point
-        pulseList: list of all pulse
+        # pulseList: list of all pulse
         # pol      : polarization of the light
     return {"PulseList" : pulseList, "size": sz, "pol":pol , "loc_y":loc, "loc_x":round(loc[0], 7)}
 
@@ -486,7 +486,7 @@ def write_oblique_src(loc, len, phi, pulseList, pol):
         # phi     : angle of incident light (90 for positive y, 0 for positive x)
         # sz      : [size_x, size_y]
         # loc     : location of center point
-        pulseList: list of all pulse
+        # pulseList: list of all pulse
         # pol     : polarization of the light
     if(phi % 90.0 == 0):
         raise ValueError('Making an oblique source with a normal incidence angle, please use write_normal_source for this')
@@ -518,14 +518,14 @@ def write_flux(name, loc, sz, save, load, weight, fcen, fwidth, nfreq, SI, cross
         # name     : filename of the flux detector
         # sz       : [size_x, size_y]
         # loc      : location of center point
-        direction: Direction of flux
+        # direction: Direction of flux
         # refl     : true if refelection flux
         # weight   : -1.0 if flux is for oppisite direction
         # fcen     : pulse center frequency
         # fwidth   : frequency width
         # nfreq    : number of frequencies to recotd
         # SI       : true if you want to use SI units
-        cross_sec: true if flux is used for cross section calculation
+        # cross_sec: true if flux is used for cross section calculation
     return {"name":name, "save":save, "load":load, "loc":loc, "size":sz, "SI":SI, "fcen":round(fcen,  8), "fwidth":round(fwidth,  8), "nfreq":nfreq,"weight":weight, "cross_sec":cross_sec}
 
 def write_flux_lam_def(name, loc, sz, save, load, weight, lamL, lamR, nfreq, SI, cross_sec):
@@ -539,7 +539,7 @@ def write_flux_lam_def(name, loc, sz, save, load, weight, lamL, lamR, nfreq, SI,
         # lamR     : right wavelength edge
         # nfreq    : number of frequencies to recotd
         # SI       : true if you want to use SI units
-        cross_sec: true if flux is used for cross section calculation
+        # cross_sec: true if flux is used for cross section calculation
     return {"name":name, "save":save, "load":load,  "loc":loc, "size":sz, "SI":SI, "lamL":round(lamL,  8), "lamR":round(lamR,  8), "nfreq":nfreq,"weight":weight, "cross_sec":cross_sec}
 
 def write_dtc(loc, sz, SI, fname, typ, dtc_class, time_int, txt_dat_type, txt_format_type, integrateMap=False, tStart=0.0, tEnd=1e8):
